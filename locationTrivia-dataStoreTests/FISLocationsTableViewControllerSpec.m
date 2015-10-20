@@ -6,7 +6,7 @@
 //  Copyright 2015 Joe Burgess. All rights reserved.
 //
 #import "FISAppDelegate.h"
-#import "FISLocationsTableViewController.h"
+#import "FISLocationTableViewController.h"
 #import "FISAddLocationViewController.h"
 
 #import <Specta/Specta.h>
@@ -19,7 +19,7 @@ SpecBegin(FISLocationsTableViewController)
 
 describe(@"FISLocationsTableViewController", ^{
     
-    __block FISLocationsTableViewController *locationsTVC;
+    __block FISLocationTableViewController *locationsTVC;
     __block UINavigationController *navController;
     
     beforeAll(^{
@@ -31,12 +31,12 @@ describe(@"FISLocationsTableViewController", ^{
         [window setRootViewController:navController];
         [window makeKeyAndVisible];
         
-        locationsTVC = (FISLocationsTableViewController*)navController.visibleViewController;
+        locationsTVC = (FISLocationTableViewController*)navController.visibleViewController;
         // ^ checked in first it block
     });
 
     it(@"viewController setup hasn't been modified from starter code", ^{
-        expect([locationsTVC isMemberOfClass:[FISLocationsTableViewController class]]).to.beTruthy();
+        expect([locationsTVC isMemberOfClass:[FISLocationTableViewController class]]).to.beTruthy();
     });
     
     describe(@"addButton", ^{

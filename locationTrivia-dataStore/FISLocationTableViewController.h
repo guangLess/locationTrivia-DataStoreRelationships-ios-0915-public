@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FISTableViewController : UITableViewController
+@interface FISLocationTableViewController : UITableViewController
 
 @end

@@ -12,7 +12,7 @@
 @implementation FISLocationsDataStroe
 
 +(FISLocationsDataStroe *)sharedDataStore{
-    
+    //snipt 
     static dispatch_once_t onceToken;
     static FISLocationsDataStroe * locationSharedDataStore;
     dispatch_once( &onceToken, ^{

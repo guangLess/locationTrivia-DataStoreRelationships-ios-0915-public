@@ -12,15 +12,15 @@
 #import "KIF.h"
 #import "FISLocation.h"
 #import "FISTrivium.h"
-#import "FISLocationsTableViewController.h"
+#import "FISLocationTableViewController.h"
 #import "FISAppDelegate.h"
-#import "FISLocationsDataStore.h"
+#import "FISLocationsDataStroe.h"
 
 SpecBegin(locationTriviaDataStore)
 
 describe(@"locationTriviaDataStore", ^{
     
-    __block NSMutableArray *locations = [FISLocationsDataStore sharedLocationsDataStore].locations;
+    __block NSMutableArray *locations = [FISLocationsDataStroe sharedDataStore].locations;
     
     __block UINavigationController *navCon;
     
@@ -38,7 +38,7 @@ describe(@"locationTriviaDataStore", ^{
         __block UITableView *table;
         
         beforeEach(^{
-            [FISLocationsDataStore sharedLocationsDataStore].locations = locations;
+            [FISLocationsDataStroe sharedDataStore].locations = locations;
             table = (UITableView *)[tester waitForViewWithAccessibilityLabel:@"Locations Table"];
         });
         
@@ -89,7 +89,7 @@ describe(@"locationTriviaDataStore", ^{
     describe(@"Trivia ViewController", ^{
         __block UITableView *table;
         beforeEach(^{
-            [FISLocationsDataStore sharedLocationsDataStore].locations = locations;
+            [FISLocationsDataStroe sharedDataStore].locations = locations;
             NSIndexPath *row = [NSIndexPath indexPathForRow:1 inSection:0];
             [tester tapRowAtIndexPath:row inTableViewWithAccessibilityIdentifier:@"Locations Table"];
             table = (UITableView *)[tester waitForViewWithAccessibilityLabel:@"Trivia Table"];
@@ -122,7 +122,7 @@ describe(@"locationTriviaDataStore", ^{
         __block NSString *triviumText = @"Flatiron School is Here";
 
         beforeEach(^{
-            [FISLocationsDataStore sharedLocationsDataStore].locations = locations;
+            [FISLocationsDataStroe sharedDataStore].locations = locations;
             NSIndexPath *row = [NSIndexPath indexPathForRow:0 inSection:0];
             [tester tapRowAtIndexPath:row inTableViewWithAccessibilityIdentifier:@"Locations Table"];
             table = (UITableView *)[tester waitForViewWithAccessibilityLabel:@"Trivia Table"];

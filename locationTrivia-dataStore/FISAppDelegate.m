@@ -8,6 +8,7 @@
 
 #import "FISAppDelegate.h"
 #import "FISLocationsDataStroe.h"
+#import "FISLocationTableViewController.h"
 
 @implementation FISAppDelegate
 

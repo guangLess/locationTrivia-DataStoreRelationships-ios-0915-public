@@ -8,7 +8,7 @@
         <!--location-->
         <scene sceneID="A6x-Vb-mzG">
             <objects>
-                <tableViewController id="XeG-aY-Ijr" customClass="FISTableViewController" sceneMemberID="viewController">
+                <tableViewController id="XeG-aY-Ijr" customClass="FISLocationTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" sectionHeaderHeight="28" sectionFooterHeight="28" id="PoS-th-Vdl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,9 +53,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="location" id="Xa6-fC-U4R">
-                        <barButtonItem key="rightBarButtonItem" title="add" id="9hp-pX-oxA">
+                        <barButtonItem key="rightBarButtonItem" title="add" id="ic4-tw-1rG">
                             <connections>
-                                <segue destination="r3U-aU-CXK" kind="presentation" identifier="addTrivia" id="79V-CD-gkk"/>
+                                <segue destination="r3U-aU-CXK" kind="presentation" id="kGo-5T-LwB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -63,9 +63,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqC-2e-KVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138.5" y="403.5"/>
+            <point key="canvasLocation" x="812.5" y="439.5"/>
         </scene>
-        <!--Trivia Table View Controller-->
+        <!--trivium-->
         <scene sceneID="P1d-72-1v6">
             <objects>
                 <tableViewController id="Wqt-KT-xO1" customClass="FISTriviaTableViewController" sceneMemberID="viewController">
@@ -91,11 +91,73 @@
                             <outlet property="delegate" destination="Wqt-KT-xO1" id="G6f-UD-T1G"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="trivium" id="Ydr-ZN-8ri">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bGv-ym-T2t">
+                            <connections>
+                                <segue destination="ZtC-hI-Tad" kind="presentation" id="lac-Fz-Uj3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bc-2J-t8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622.5" y="408.5"/>
+            <point key="canvasLocation" x="1362.5" y="403.5"/>
+        </scene>
+        <!--Add Trivia View Controller-->
+        <scene sceneID="7Bv-Pf-Hxd">
+            <objects>
+                <viewController id="ZtC-hI-Tad" customClass="FISAddTriviaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BjR-9b-OYl"/>
+                        <viewControllerLayoutGuide type="bottom" id="oRM-xJ-kxH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ER7-2I-PMk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="hello placehoder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJW-v1-4JP">
+                                <rect key="frame" x="104" y="234" width="144" height="107"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-LW-qQL">
+                                <rect key="frame" x="-5" y="0.0" width="380" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="add trivium" id="d5P-1j-T5Z">
+                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="PyF-ov-Onx">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="ZtC-hI-Tad" id="OUe-zR-dix"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="save" id="kQN-Vi-VrN">
+                                            <connections>
+                                                <action selector="addButton:" destination="ZtC-hI-Tad" id="u0E-RC-Zel"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButtonLabel" destination="kQN-Vi-VrN" id="GwV-o0-4yw"/>
+                        <outlet property="cancelButtonLabel" destination="PyF-ov-Onx" id="rvx-Md-P0W"/>
+                        <outlet property="textField" destination="vJW-v1-4JP" id="CAU-Nx-ixr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOo-6K-dgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.5" y="589.5"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="8mi-c8-VoF">
@@ -110,39 +172,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mT-bZ-4LX">
-                                <rect key="frame" x="185" y="443" width="140" height="82"/>
+                                <rect key="frame" x="170" y="300" width="140" height="39"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2bB-pk-YUS">
-                                <rect key="frame" x="185" y="326" width="140" height="74"/>
+                                <rect key="frame" x="170" y="194" width="140" height="44"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dM-lp-JCJ">
-                                <rect key="frame" x="21" y="28" width="45" height="30"/>
-                                <animations/>
-                                <state key="normal" title="cancel"/>
-                                <connections>
-                                    <action selector="cancel:" destination="r3U-aU-CXK" eventType="touchUpInside" id="BnA-By-Yg3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COn-oX-B8Q">
-                                <rect key="frame" x="309" y="28" width="47" height="30"/>
-                                <animations/>
-                                <state key="normal" title="submit"/>
-                                <connections>
-                                    <action selector="submit:" destination="r3U-aU-CXK" eventType="touchUpInside" id="AV0-BS-4Lx"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svG-Uy-1oi">
-                                <rect key="frame" x="185" y="215" width="140" height="74"/>
+                                <rect key="frame" x="170" y="83" width="140" height="38"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-3B-Mlk">
+                                <rect key="frame" x="5" y="0.0" width="375" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="add new location" id="wQI-RQ-i08">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="qwo-gQ-pVl">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7dM-lp-JCJ">
+                                                <rect key="frame" x="16" y="7" width="45" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <state key="normal" title="cancel"/>
+                                                <connections>
+                                                    <action selector="cancel:" destination="r3U-aU-CXK" eventType="touchUpInside" id="BnA-By-Yg3"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="lhm-IW-0vC">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="COn-oX-B8Q">
+                                                <rect key="frame" x="312" y="7" width="47" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <state key="normal" title="submit"/>
+                                                <connections>
+                                                    <action selector="submit:" destination="r3U-aU-CXK" eventType="touchUpInside" id="AV0-BS-4Lx"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfe-Ad-8Ac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577.5" y="-427.5"/>
+            <point key="canvasLocation" x="802.5" y="-395.5"/>
         </scene>
         <!--location-->
         <scene sceneID="oNN-qI-P90">
@@ -178,7 +254,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1z-P7-JMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="327" y="404"/>
+            <point key="canvasLocation" x="212.5" y="431.5"/>
         </scene>
     </scenes>
 </document>

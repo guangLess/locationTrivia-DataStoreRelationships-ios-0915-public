@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FISLocation.h"
 
 @interface FISLocationsDataStroe : NSObject
 

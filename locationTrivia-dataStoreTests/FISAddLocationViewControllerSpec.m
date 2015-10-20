@@ -7,7 +7,7 @@
 //
 
 #import "FISAddLocationViewController.h"
-#import "FISLocationsDataStore.h"
+#import "FISLocationsDataStroe.h"
 
 #import <Specta/Specta.h>
 #import <Expecta/Expecta.h>
@@ -111,7 +111,7 @@ describe(@"FISAddLocationViewController", ^{
         });
         
         it(@"saves a new FISLocation to the DataManager", ^{
-            FISLocationsDataStore *store = [FISLocationsDataStore sharedLocationsDataStore];
+            FISLocationsDataStroe *store = [FISLocationsDataStroe sharedDataStore];
             
             NSInteger dataManagerCountPreSave = store.locations.count;
             [tester tapViewWithAccessibilityLabel:@"saveButton"];
@@ -122,7 +122,7 @@ describe(@"FISAddLocationViewController", ^{
         });
         
         it(@"saves a new FISLocation with actual user input", ^{
-            FISLocationsDataStore *store = [FISLocationsDataStore sharedLocationsDataStore];
+            FISLocationsDataStroe *store = [FISLocationsDataStroe sharedDataStore];
             
             NSString *testLocationName = @"Test Location";
             NSString *testLocationLat = @"40.7050";
