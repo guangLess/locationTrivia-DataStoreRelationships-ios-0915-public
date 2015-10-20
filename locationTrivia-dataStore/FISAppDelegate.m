@@ -7,12 +7,16 @@
 //
 
 #import "FISAppDelegate.h"
+#import "FISLocationsDataStroe.h"
 
 @implementation FISAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    FISLocationsDataStroe * fds = [[FISLocationsDataStroe alloc] init];
+    NSLog(@"locationData, %@", fds);
+    
     return YES;
 }
 							
